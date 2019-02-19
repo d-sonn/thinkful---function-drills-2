@@ -79,7 +79,24 @@ function howManyDaysInMonth(month, leapYear = false) {
   return `${month} has ${daysInMonth} days`;
 }
 
-console.log(howManyDaysInMonth('April', true));
+// console.log(howManyDaysInMonth('April', true));
 
+function rps(weapon) {
+  // 1 - rock, 2 - paper, 3 - scissors
+  if (![1,2,3].includes(weapon)) {
+    throw new Error('Not an option!');
+  }
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  let outcome = (3 + weapon - randomNo) % 3;
+  if(outcome === 1) {
+    return 'Player wins!';
+  }
+  if(outcome === 2) {
+    return 'Computer wins!';
+  }
+  if(outcome === 0) {
+    return 'Tie!';
+  }
+}
 
-
+console.log(rps(1));
